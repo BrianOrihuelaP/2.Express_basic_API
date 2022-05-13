@@ -42,6 +42,22 @@ app.post('/v1/explorers', (req, res) => { //creando una url con parametro
     //AGREGAR LALOGICA PARA PERSISTIR
     res.status(201).json({message: "Creado exitosamente"})
 })
+//PUT actualiza
+app.put('/v1/explorers/:id', (req, res) => { //creando una url con parametro
+    //imprime en la terminal la fecha y hora que se accesa a la pagina
+    console.log(`PUT explorers v1 API ${new Date()}`);
+    console.log(req.params.id);
+    const requestBody = req.body //parametros del cliente
+    console.log(requestBody);
+    res.status(200).json({message: "Actualizado exitosamente"})
+})
+
+app.delete('/v1/explorers/:id', (req, res) => { //creando una url con parametro
+    //imprime en la terminal la fecha y hora que se accesa a la pagina
+    console.log(`DELETE explorers v1 API ${new Date()}`);
+   //Agrega la logica para eliminar
+    res.status(200).json({message: "Eliminado exitosamente"})
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);   
