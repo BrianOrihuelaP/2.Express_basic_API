@@ -21,6 +21,28 @@ app.get('/v1/explorers', (req, res) => { //creando una url
     //envia una respuesta al cliente con la info de la lista 
 })
 
+app.get('/v1/explorers/:id', (req, res) => { //creando una url con parametro
+    //imprime en la terminal la fecha y hora que se accesa a la pagina
+    console.log(`GET explorers v1 API ${new Date()}`);
+    //creo objetos 
+    const explorer0 = { id: 1, name: "Ulises", }
+    //creo una lista con los objetos
+    //HTTP CODE STATUS 200
+    res.status(200).json(explorer0)
+    /* res.send(lista) */
+    //envia una respuesta al cliente con la info de la lista 
+})
+
+//get regresar informacion
+//post crea 
+
+app.post('/v1/explorers', (req, res) => { //creando una url con parametro
+    //imprime en la terminal la fecha y hora que se accesa a la pagina
+    console.log(`POST explorers v1 API ${new Date()}`);
+    //AGREGAR LALOGICA PARA PERSISTIR
+    res.status(201).json({message: "Creado exitosamente"})
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);   
     //metodo que escucha lo que sucede en el puerto y manda un mensaje en el dezpliegue
